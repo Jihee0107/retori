@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -765,7 +765,7 @@
             document.querySelectorAll('.tab-content').forEach(tab =&gt; tab.classList.add('hidden'));
             document.querySelectorAll('.tab-button').forEach(button =&gt; button.classList.remove('active'));
             document.getElementById(tabName).classList.remove('hidden');
-            document.getElementById(tabName + '-tab').classList.add('active');
+            const tabBtn = document.getElementById({ calculator: 'calc-tab', estimate: 'form-tab', message: 'message-tab' }[tabName]); if (tabBtn) tabBtn.classList.add('active');
         }
 
         function toggleQuickButtons(type) {
@@ -920,7 +920,7 @@
             let rows = '';
             items.forEach(item =&gt; {
                 if (item.qty &gt; 0) {
-                    rows += &lt;tr&gt;&lt;td&gt;${item.name}&lt;/td&gt;&lt;td&gt;${item.spec}&lt;/td&gt;&lt;td&gt;${item.qty}장&lt;/td&gt;&lt;td&gt;${item.unitPrice.toLocaleString()}원&lt;/td&gt;&lt;td&gt;${(item.qty * item.unitPrice).toLocaleString()}원&lt;/td&gt;&lt;/tr&gt;;
+                    rows += '&lt;tr&gt;&lt;td&gt;' + item.name + '&lt;/td&gt;&lt;td&gt;' + item.spec + '&lt;/td&gt;&lt;td&gt;' + item.qty + '장&lt;/td&gt;&lt;td&gt;' + item.unitPrice.toLocaleString() + '원&lt;/td&gt;&lt;td&gt;' + (item.qty * item.unitPrice).toLocaleString() + '원&lt;/td&gt;&lt;/tr&gt;';
                 }
             });
             document.getElementById('quote-body').innerHTML = rows;
@@ -2102,7 +2102,7 @@ http://pf.kakao.com/_xnAFEG
             document.querySelectorAll('.tab-content').forEach(tab =&gt; tab.classList.add('hidden'));
             document.querySelectorAll('.tab-button').forEach(button =&gt; button.classList.remove('active'));
             document.getElementById(tabName).classList.remove('hidden');
-            document.getElementById(tabName + '-tab').classList.add('active');
+            const tabBtn = document.getElementById({ calculator: 'calc-tab', estimate: 'form-tab', message: 'message-tab' }[tabName]); if (tabBtn) tabBtn.classList.add('active');
         }
 
         function toggleQuickButtons(type) {
@@ -2248,7 +2248,7 @@ function syncMat80() {
             let rows = '';
             items.forEach(item =&gt; {
                 if (item.qty &gt; 0) {
-                    rows += &lt;tr&gt;&lt;td&gt;${item.name}&lt;/td&gt;&lt;td&gt;${item.spec}&lt;/td&gt;&lt;td&gt;${item.qty}장&lt;/td&gt;&lt;td&gt;${item.unitPrice.toLocaleString()}원&lt;/td&gt;&lt;td&gt;${(item.qty * item.unitPrice).toLocaleString()}원&lt;/td&gt;&lt;/tr&gt;;
+                    rows += '&lt;tr&gt;&lt;td&gt;' + item.name + '&lt;/td&gt;&lt;td&gt;' + item.spec + '&lt;/td&gt;&lt;td&gt;' + item.qty + '장&lt;/td&gt;&lt;td&gt;' + item.unitPrice.toLocaleString() + '원&lt;/td&gt;&lt;td&gt;' + (item.qty * item.unitPrice).toLocaleString() + '원&lt;/td&gt;&lt;/tr&gt;';
                 }
             });
             document.getElementById('quote-body').innerHTML = rows;
